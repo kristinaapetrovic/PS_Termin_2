@@ -1,0 +1,19 @@
+CREATE DATABASE termin_2;
+
+CREATE TABLE organizaciona_jedinica(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	naziv VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE radnik(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	radna_knjizica VARCHAR(10) NOT NULL,
+	jmbg VARCHAR(13) NOT NULL,
+	ime VARCHAR(100) NOT NULL,
+	prezime VARCHAR(100) NOT NULL,
+	ojed INT,
+	FOREIGN KEY (ojed) REFERENCES organizaciona_jedinica (id)
+);
+INSERT INTO organizaciona_jedinica (naziv) VALUES ('oj1');
+INSERT INTO organizaciona_jedinica (naziv) VALUES ('oj2');
+INSERT INTO organizaciona_jedinica (naziv) VALUES ('oj3');
